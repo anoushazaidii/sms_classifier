@@ -93,17 +93,15 @@ Future<void> predictIP(
 
 
 
-
 Future<void> predictURL(
   TextEditingController _urlController, Function(String) updatePrediction) async {
   String url = _urlController.text;
   String apiUrl = 'http://10.0.2.2:5000/classify_url'; // Replace with your Flask API URL
   
   try {
-    final response = await http.post(
-      Uri.parse(apiUrl),
+    final response = await http.get(
+      Uri.parse('$apiUrl?search=$url'),
       headers: {'Content-Type': 'application/json'},
-      body: json.encode({'url': url}),
     );
   
     if (response.statusCode == 200) {
@@ -115,7 +113,5 @@ Future<void> predictURL(
     updatePrediction('Error: $e');
   }
   
-  // _ipController.clear();
+  // _urlController.clear();
 }
-
-

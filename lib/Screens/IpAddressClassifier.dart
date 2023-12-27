@@ -15,7 +15,7 @@ class _ipClassifierState extends State<ipClassifier> {
   final TextEditingController _ipController = TextEditingController();
   bool showResult = false;
   IPDetails _prediction1 =
-      IPDetails(result: '', ipType: '', geolocation: Geolocation());
+      IPDetails(result: '', ipType: '',);
 
   @override
   Widget build(BuildContext context) {
@@ -103,20 +103,20 @@ class _ipClassifierState extends State<ipClassifier> {
                               _prediction1 = IPDetails(
                                 result: jsonResponse['result'].toString(),
                                 ipType: jsonResponse['ip_type'].toString(),
-                                geolocation: Geolocation(
-                                  city: jsonResponse['geolocation']['city']
-                                      .toString(),
-                                  country: jsonResponse['geolocation']['country']
-                                      .toString(),
-                                  latitude: jsonResponse['geolocation']
-                                          ['latitude']
-                                      .toString(),
-                                  longitude: jsonResponse['geolocation']
-                                          ['longitude']
-                                      .toString(),
-                                  region: jsonResponse['geolocation']['region']
-                                      .toString(),
-                                ),
+                                // geolocation: Geolocation(
+                                //   city: jsonResponse['geolocation']['city']
+                                //       .toString(),
+                                //   country: jsonResponse['geolocation']['country']
+                                //       .toString(),
+                                //   latitude: jsonResponse['geolocation']
+                                //           ['latitude']
+                                //       .toString(),
+                                //   longitude: jsonResponse['geolocation']
+                                //           ['longitude']
+                                //       .toString(),
+                                //   region: jsonResponse['geolocation']['region']
+                                //       .toString(),
+                                // ),
                               );
                             });
                           });
@@ -163,7 +163,7 @@ class _ipClassifierState extends State<ipClassifier> {
                        (
                         alignment: Alignment.bottomLeft,
                          child: Text(
-                          'Geolocation-',
+                          '',
                           style: GoogleFonts.lato(
                             color:  Color(0xff110e53),
                             fontSize: 25.0,
@@ -171,41 +171,41 @@ class _ipClassifierState extends State<ipClassifier> {
                           ),
                                              ),
                        ),
-                    Text(
-                      '${_prediction1.geolocation.city}',
-                      style: GoogleFonts.lato(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      '${_prediction1.geolocation.country}',
-                      style: GoogleFonts.lato(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      '${_prediction1.geolocation.latitude}',
-                      style: GoogleFonts.lato(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      '${_prediction1.geolocation.longitude}',
-                      style: GoogleFonts.lato(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      '${_prediction1.geolocation.region}',
-                      style: GoogleFonts.lato(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                    // Text(
+                    //   '${_prediction1.geolocation.city}',
+                    //   style: GoogleFonts.lato(
+                    //     fontSize: 18.0,
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
+                    // Text(
+                    //   '${_prediction1.geolocation.country}',
+                    //   style: GoogleFonts.lato(
+                    //     fontSize: 18.0,
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
+                    // Text(
+                    //   '${_prediction1.geolocation.latitude}',
+                    //   style: GoogleFonts.lato(
+                    //     fontSize: 18.0,
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
+                    // Text(
+                    //   '${_prediction1.geolocation.longitude}',
+                    //   style: GoogleFonts.lato(
+                    //     fontSize: 18.0,
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
+                    // Text(
+                    //   '${_prediction1.geolocation.region}',
+                    //   style: GoogleFonts.lato(
+                    //     fontSize: 18.0,
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -220,27 +220,27 @@ class _ipClassifierState extends State<ipClassifier> {
 class IPDetails {
   final String result;
   final String ipType;
-  final Geolocation geolocation;
+  // final Geolocation geolocation;
 
   IPDetails({
     required this.result,
     required this.ipType,
-    required this.geolocation,
+    // required this.geolocation,
   });
 }
 
-class Geolocation {
-  final String? city;
-  final String? country;
-  final String? latitude;
-  final String? longitude;
-  final String? region;
+// class Geolocation {
+//   final String? city;
+//   final String? country;
+//   final String? latitude;
+//   final String? longitude;
+//   final String? region;
 
-  Geolocation({
-    this.city = '',
-    this.country = '',
-    this.latitude = '',
-    this.longitude = '',
-    this.region = '',
-  });
-}
+//   Geolocation({
+//     this.city = '',
+//     this.country = '',
+//     this.latitude = '',
+//     this.longitude = '',
+//     this.region = '',
+//   });
+// }

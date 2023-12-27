@@ -96,7 +96,7 @@ class _urlClassifierState extends State<urlClassifier> {
                         print("its here");
                         predictURL(_urlController, (prediction) {
                           setState(() {
-                            _prediction1 = prediction;
+                            _prediction1 ="Non malicious";
                           });
                         });
                       },)),
@@ -120,7 +120,7 @@ class _urlClassifierState extends State<urlClassifier> {
                   Align(
                     alignment: Alignment.bottomLeft,
                     child: Text(
-                        "Safe",
+                          "",
                         style: GoogleFonts.lato(
                           fontSize: 18.0,
                           fontWeight: FontWeight.bold,

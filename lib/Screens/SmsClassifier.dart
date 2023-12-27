@@ -163,7 +163,7 @@ class _smsClassifierState extends State<smsClassifier> {
                         ),
                       ),
                     ),
-                    Row(
+                    Column(
                       children: [
                         SizedBox(
                           width: 20,
